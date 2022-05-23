@@ -39,11 +39,9 @@ export default function Timer({
          
         }
         seconds = seconds - 1;
-
         updateDisplay(minutes, seconds);
        
       }
-      
       countdown();
       
     },1000)
