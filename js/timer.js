@@ -1,4 +1,13 @@
 import Controls from "./controls.js"
+import{
+  buttonPlay,
+  buttonPause
+} from "./elements.js"
+
+const controls = Controls({
+  buttonPlay,
+  buttonPause
+})
 
 export default function Timer({
   minutesDisplay,
@@ -18,6 +27,7 @@ export default function Timer({
       if((minutes <= 0)&&(seconds <= 0)){
         TimerAlarm();
         resetTimer();
+        controls.pauseHide();
         return
       }
 

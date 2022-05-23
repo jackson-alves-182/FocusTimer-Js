@@ -5,9 +5,10 @@ export default function(){
   const bgCoffeeShop = new Audio("./sounds/Cafeteria.wav");
   const bgFirePlace = new Audio("./sounds/Lareira.wav");
   const click = new Audio("./sounds/Click.wav");
-  const endTimerAlarm = new Audio("./sounds/Alarm.mp3");
+  const endTimerAlarm = new Audio("./sounds/End-alarm.wav");
 
   function clickSound(){
+    click.volume = 0.2;
     click.play();
   }
 

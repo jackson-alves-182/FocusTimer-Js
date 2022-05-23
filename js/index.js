@@ -10,13 +10,12 @@ import{
   secondsDisplay
 } from "./elements.js"
 
-
 const sounds = Sounds();
 
 const timer = Timer({
   minutesDisplay,
   secondsDisplay,
-  TimerAlarm: sounds.TimerAlarm, 
+  TimerAlarm: sounds.TimerAlarm,
 })
 
 const controls  = Controls ({
@@ -26,5 +25,6 @@ const controls  = Controls ({
   timer,
   clickSound: sounds.clickSound
 })
+
 
 const events = Events(sounds,timer, controls);

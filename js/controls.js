@@ -4,6 +4,7 @@ export default function Controls({
   timer,
   clickSound
 }){
+
   
   function play(){
     buttonPlay.classList.add('hide');
@@ -26,8 +27,7 @@ export default function Controls({
   }
 
   function stop(){
-    buttonPause.classList.add('hide');
-    buttonPlay.classList.remove('hide');
+    pauseHide();
 
     timer.stopCountdown();
     timer.resetTimer();
@@ -40,4 +40,8 @@ export default function Controls({
     pauseHide,
     stop
   }
+
+  
+
 } 
+
