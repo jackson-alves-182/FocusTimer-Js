@@ -1,0 +1,119 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+:root{
+  font-size:62.5%;
+
+  --btn-primary-color: #02799D;
+  --btn-secondary-color:#323238;
+  --btn-text-color:#FFFFFF;
+  --bg-color:#FFFFFF;
+  --font-color:#000000;
+}
+
+body{
+  font-family:'Roboto', sans-serif;
+  color:var(--font-color);
+  background:var(--bg-color);
+
+  height:100vh;
+  
+  display:grid;
+}
+
+#timer-section,
+#timer-buttons{
+  display:flex;
+}
+
+#container{
+  max-width:90rem;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 30rem;
+  align-items: center;
+
+  gap:clamp(2rem, 8vw, 14rem);
+}
+
+#timer-section{
+  max-width:37rem;
+
+  flex-direction:column;
+  gap:2rem;
+}
+#timer{
+  display:flex;
+}
+#timer span{
+  font-size:clamp(11rem, 2rem + 28vw, 15rem);
+}
+
+button{
+  background-color:transparent;
+  border:none;
+  cursor:pointer;
+}
+
+
+#timer-buttons{
+  height:62px;
+  justify-content:space-between;
+}
+
+#timer-buttons > button{
+  width:62px;
+  height:62px;
+}
+
+#sounds-buttons{
+  display:grid;
+
+  justify-content: center;  
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+}
+
+.hide{
+  display:none;
+}
+
+.color svg path:nth-child(1){
+  fill:var(--btn-primary-color);
+}
+.color svg path:nth-child(2){
+  fill:var(--btn-text-color);
+}
+
+footer{
+  position:absolute;
+  bottom:2rem;
+  right:2rem;
+}
+
+@media(max-width:750px){
+  body{
+    margin:1rem;
+  }
+  #container{
+    grid-template-columns:1fr;
+  }
+  #timer-section{
+    align-items:center;
+  }
+  #timer-buttons{
+    justify-content:space-around;
+    gap:1rem;
+  }
+  #sounds-buttons{
+    margin:auto;
+    gap:1rem;
+  }
+  .sound-btn svg{
+    width:95%;
+    height:95%;
+  }
+}
