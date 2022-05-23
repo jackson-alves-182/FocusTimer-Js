@@ -11,6 +11,8 @@
   --btn-text-color:#FFFFFF;
   --bg-color:#FFFFFF;
   --font-color:#000000;
+
+  --btn-tooltip-color:#dbdbdb5f;
 }
 
 body{
@@ -68,6 +70,38 @@ button{
   width:62px;
   height:62px;
 }
+
+.add-time {
+  position:relative;
+}
+
+#timer-buttons button:nth-child(4)::before,
+#timer-buttons button:nth-child(5)::before{
+  content:'';
+  position:absolute;
+  
+  width:5rem;
+  padding:1rem 1rem;
+  border:1px solid var(--btn-secondary-color);
+
+  border-radius:1rem;
+  background:var(--btn-tooltip-color);
+
+  transform: scale(0) translateY(0);
+  transition: transform 0.6s, translateY 0.4s;
+}
+
+#timer-buttons button:nth-child(4):hover::before,
+#timer-buttons button:nth-child(5):hover::before{
+  transform: scale(1) translateY(-65px);
+}
+#timer-buttons button:nth-child(4)::before{
+  content:'Adiciona 5 Minutos';
+}
+#timer-buttons button:nth-child(5)::before{
+  content:'Remove 5 Minutos';
+}
+
 
 #sounds-buttons{
   display:grid;

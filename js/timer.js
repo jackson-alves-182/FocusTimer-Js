@@ -24,7 +24,7 @@ export default function Timer({
       if(minutes => 0){
        
         if((seconds == 0)&&(minutes > 0)){
-          seconds = 5;
+          seconds = 60;
           minutes = minutes - 1;
          
         }
@@ -60,7 +60,7 @@ export default function Timer({
       updateDisplay(minute, Number(secondsDisplay.textContent));
     }
     else{
-      alert("Minutos devem ser maior que ZERO");
+      alert("Minutos deve ser maior que ZERO");
     }
     
   }
