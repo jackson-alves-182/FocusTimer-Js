@@ -10,7 +10,11 @@ import{
   buttonCoffeeShop,
   buttonFireplace,
   buttonSoundOn,
-  buttonSoundOff
+  buttonSoundOff,
+  inputNature,
+  inputRain,
+  inputCoffeeShop,
+  inputFirePlace
 } from "./elements.js"
 
 
@@ -49,6 +53,10 @@ export default function(sounds,timer,controls){
 
     sound = "nature";
 
+    addHide();
+    document.querySelector('.inputNature').classList.remove('hide');
+    sounds.changeVolume(inputNature.value, sound);
+
     buttonRain.classList.remove('color');
     buttonCoffeeShop.classList.remove('color');
     buttonFireplace.classList.remove('color');
@@ -65,6 +73,10 @@ export default function(sounds,timer,controls){
     playSound();
 
     sound = "rain";
+
+    addHide();
+    document.querySelector('.inputRain').classList.remove('hide');
+    sounds.changeVolume(inputRain.value, sound); // puxar volume inicial em 0.5 definido no Slider
 
     buttonNature.classList.remove('color');
     buttonCoffeeShop.classList.remove('color');
@@ -83,6 +95,10 @@ export default function(sounds,timer,controls){
 
     sound = "coffeeshop";
 
+    addHide();
+    document.querySelector('.inputCoffeeShop').classList.remove('hide');
+    sounds.changeVolume(inputCoffeeShop.value, sound);
+
     buttonRain.classList.remove('color');
     buttonNature.classList.remove('color');
     buttonFireplace.classList.remove('color');
@@ -100,6 +116,10 @@ export default function(sounds,timer,controls){
 
     sound = "fireplace";
 
+    addHide();
+    document.querySelector('.inputFirePlace').classList.remove('hide');
+    sounds.changeVolume(inputFirePlace.value, sound);
+
     buttonNature.classList.remove('color');
     buttonRain.classList.remove('color');
     buttonCoffeeShop.classList.remove('color');
@@ -115,14 +135,35 @@ export default function(sounds,timer,controls){
     buttonSoundOn.classList.remove('hide');
   }
 
-buttonSoundOn.addEventListener('click', function(){
-  stopSound();
-  sounds.pauseCurrentSound(sound);
-})
+  function addHide(){
+    const countInput = document.querySelectorAll('.input');
+    for(var i = 0; i < countInput.length; i++){
+      document.querySelectorAll('.input')[i].classList.add('hide');
+    }
+  }
 
-buttonSoundOff.addEventListener('click', function(){
-  playSound();
-  sounds.playPausedSound(sound);
-})
+  buttonSoundOn.addEventListener('click', function(){
+    stopSound();
+    sounds.pauseCurrentSound(sound);
+  })
+
+  buttonSoundOff.addEventListener('click', function(){
+    playSound();
+    sounds.playPausedSound(sound);
+  })
+  inputNature.addEventListener('change', function(){
+    sounds.changeVolume(inputNature.value, sound);
+    
+  })
+  inputRain.addEventListener('change', function(){
+    sounds.changeVolume(inputRain.value, sound);
+  })
+  inputCoffeeShop.addEventListener('change', function(){
+    sounds.changeVolume(inputCoffeeShop.value, sound); 
+    
+  })
+  inputFirePlace.addEventListener('change', function(){
+    sounds.changeVolume(inputFirePlace.value,sound);
+  })
 
 }

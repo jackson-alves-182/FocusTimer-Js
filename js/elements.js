@@ -19,6 +19,11 @@ const buttonFireplace = document.querySelector('.fireplace');
 const buttonSoundOn = document.querySelector('.sound-on');
 const buttonSoundOff = document.querySelector('.sound-off');
 
+const inputNature = document.querySelector('.inputNature');
+const inputRain = document.querySelector('.inputRain');
+const inputCoffeeShop = document.querySelector('.inputCoffeeShop');
+const inputFirePlace = document.querySelector('.inputFirePlace');
+
 export {
   minutesDisplay,
   secondsDisplay,
@@ -32,5 +37,9 @@ export {
   buttonCoffeeShop,
   buttonFireplace,
   buttonSoundOn,
-  buttonSoundOff
+  buttonSoundOff,
+  inputNature,
+  inputRain,
+  inputCoffeeShop,
+  inputFirePlace
 }

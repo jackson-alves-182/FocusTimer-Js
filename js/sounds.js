@@ -82,6 +82,22 @@ export default function(){
     } 
   }
 
+  function changeVolume(amount, sound){
+   
+    if(sound == "nature"){
+      bgNature.volume = amount;
+    }
+    else if(sound == "rain"){
+      bgRain.volume = amount;
+    }
+    else if(sound == "coffeeshop"){
+      bgCoffeeShop.volume = amount;
+    }
+    else if(sound == "fireplace"){
+      bgFirePlace.volume = amount;
+    }
+  }
+
 
   return{
     clickSound,
@@ -95,6 +111,7 @@ export default function(){
     playFirePlace,
     pauseFirePlace,
     pauseCurrentSound,
-    playPausedSound
+    playPausedSound,
+    changeVolume
   }
 }
