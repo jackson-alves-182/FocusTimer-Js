@@ -14,12 +14,47 @@ import{
   inputNature,
   inputRain,
   inputCoffeeShop,
-  inputFirePlace
+  inputFirePlace,
+  lightMode,
+  darkMode
 } from "./elements.js"
 
 
 export default function(sounds,timer,controls){
   let sound;
+  let dark = new Boolean(false);
+
+  darkMode.addEventListener('click', function(){
+    lightMode.classList.remove('hide');
+    darkMode.classList.add('hide');
+
+    dark = true;
+    removeClassSoundBtn(dark);
+
+    document.querySelector('body').classList.remove('lightBG');
+    document.querySelector('body').classList.add('darkBG');
+    document.querySelector('.container').classList.remove('container-light-bg');
+    document.querySelector('.container').classList.add('container-dark-bg');
+
+    document.documentElement.style.setProperty('--btn-bg-color','#ffffff3f');
+    document.documentElement.style.setProperty('--font-color', '#ffffffa9');
+    document.documentElement.style.setProperty('--btn-secondary-color', '#ffffffa9');
+    document.documentElement.style.setProperty('--btn-text-color', '#000000');
+
+  })
+
+  lightMode.addEventListener('click', function(){
+    darkMode.classList.remove('hide');
+    lightMode.classList.add('hide');
+
+    dark = false;
+    removeClassSoundBtn(dark);
+
+    document.querySelector('body').classList.remove('darkBG');
+    document.querySelector('body').classList.add('lightBG');
+    document.querySelector('.container').classList.remove('container-dark-bg');
+    document.querySelector('.container').classList.add('container-light-bg');
+  })
 
   buttonPlay.addEventListener('click', function(){
     controls.play();
@@ -42,8 +77,14 @@ export default function(sounds,timer,controls){
   });
 
   buttonNature.addEventListener('click', function(){
-    buttonNature.classList.add('color');
-   
+    removeClassSoundBtn(dark);
+    if(dark == false){
+      buttonNature.classList.add('color');
+    }
+    else{
+      buttonNature.classList.add('dark-theme');
+    }
+    
     if(sound != null ){
       sounds.pauseCurrentSound(sound);
     }
@@ -56,14 +97,17 @@ export default function(sounds,timer,controls){
     addHide();
     document.querySelector('.inputNature').classList.remove('hide');
     sounds.changeVolume(inputNature.value, sound);
-
-    buttonRain.classList.remove('color');
-    buttonCoffeeShop.classList.remove('color');
-    buttonFireplace.classList.remove('color');
   });
 
   buttonRain.addEventListener('click', function(){
-    buttonRain.classList.add('color');
+    removeClassSoundBtn(dark);
+    if(dark == false){
+      buttonRain.classList.add('color');
+    }
+    else{
+      buttonRain.classList.add('dark-theme');
+    }
+   
 
     if(sound != null ){
       sounds.pauseCurrentSound(sound);
@@ -76,15 +120,18 @@ export default function(sounds,timer,controls){
 
     addHide();
     document.querySelector('.inputRain').classList.remove('hide');
-    sounds.changeVolume(inputRain.value, sound); // puxar volume inicial em 0.5 definido no Slider
-
-    buttonNature.classList.remove('color');
-    buttonCoffeeShop.classList.remove('color');
-    buttonFireplace.classList.remove('color');
+    sounds.changeVolume(inputRain.value, sound); // puxa volume inicial em 0.5 definido no Slider
   });
 
   buttonCoffeeShop.addEventListener('click', function(){
-    buttonCoffeeShop.classList.add('color');
+    removeClassSoundBtn(dark);
+    if(dark == false){
+      buttonCoffeeShop.classList.add('color');
+    }
+    else{
+      buttonCoffeeShop.classList.add('dark-theme');
+    }
+    
     
     if(sound != null){
       sounds.pauseCurrentSound(sound);
@@ -98,14 +145,17 @@ export default function(sounds,timer,controls){
     addHide();
     document.querySelector('.inputCoffeeShop').classList.remove('hide');
     sounds.changeVolume(inputCoffeeShop.value, sound);
-
-    buttonRain.classList.remove('color');
-    buttonNature.classList.remove('color');
-    buttonFireplace.classList.remove('color');
   });
 
   buttonFireplace.addEventListener('click', function(){
-    buttonFireplace.classList.add('color');
+    removeClassSoundBtn(dark);
+    if(dark == false){
+      buttonFireplace.classList.add('color');
+    }
+    else{
+      buttonFireplace.classList.add('dark-theme');
+    }
+   
 
     if(sound != null){
       sounds.pauseCurrentSound(sound);
@@ -120,9 +170,6 @@ export default function(sounds,timer,controls){
     document.querySelector('.inputFirePlace').classList.remove('hide');
     sounds.changeVolume(inputFirePlace.value, sound);
 
-    buttonNature.classList.remove('color');
-    buttonRain.classList.remove('color');
-    buttonCoffeeShop.classList.remove('color');
   });
 
   function stopSound(){
@@ -142,15 +189,32 @@ export default function(sounds,timer,controls){
     }
   }
 
-  buttonSoundOn.addEventListener('click', function(){
-    stopSound();
-    sounds.pauseCurrentSound(sound);
-  })
+  function removeClassSoundBtn(dark){
 
-  buttonSoundOff.addEventListener('click', function(){
-    playSound();
-    sounds.playPausedSound(sound);
-  })
+    const countBtn = document.querySelectorAll('.sound-btn');
+
+    if(dark == false){
+      for(var i = 0; i < countBtn.length; i++){
+        document.querySelectorAll('.sound-btn')[i].classList.remove('color');
+
+        if(document.querySelectorAll('.sound-btn')[i].classList.contains('dark-theme')){
+          document.querySelectorAll('.sound-btn')[i].classList.add('color');
+          document.querySelectorAll('.sound-btn')[i].classList.remove('dark-theme');
+        }
+      }
+    }
+    else{
+      for(var i = 0; i < countBtn.length; i++){
+        document.querySelectorAll('.sound-btn')[i].classList.remove('dark-theme');
+
+        if(document.querySelectorAll('.sound-btn')[i].classList.contains('color')){
+          document.querySelectorAll('.sound-btn')[i].classList.remove('color');
+          document.querySelectorAll('.sound-btn')[i].classList.add('dark-theme');
+        }
+      }
+    }
+  }
+
   inputNature.addEventListener('change', function(){
     sounds.changeVolume(inputNature.value, sound);
     
@@ -166,4 +230,14 @@ export default function(sounds,timer,controls){
     sounds.changeVolume(inputFirePlace.value,sound);
   })
 
+
+  buttonSoundOn.addEventListener('click', function(){
+    stopSound();
+    sounds.pauseCurrentSound(sound);
+  })
+
+  buttonSoundOff.addEventListener('click', function(){
+    playSound();
+    sounds.playPausedSound(sound);
+  })
 }

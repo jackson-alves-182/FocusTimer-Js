@@ -6,6 +6,7 @@
 :root{
   font-size:62.5%;
 
+  --btn-bg-color:#e2e1e6;
   --btn-primary-color: #02799D;
   --btn-secondary-color:#323238;
   --btn-text-color:#FFFFFF;
@@ -29,12 +30,33 @@ body{
   display:grid;
 }
 
+header{
+  position:absolute;
+  top:2rem;
+  right:2rem;
+}
+
+.darkBG{
+  transition: background-image 1s;
+  background-image:url("/assets/bg-img.jpg");
+}
+.lightBG{
+  transition: background-image 1s;
+  background-image:url("/assets/bg-img-light.jpg"); 
+}
+.dark-theme svg path:nth-child(1){
+  fill:var(--btn-secondary-color);
+}
+.dark-theme svg path:nth-child(2){
+  fill:var(--btn-text-color);
+}
+
 #timer-section,
 #timer-buttons{
   display:flex;
 }
 
-#container{
+.container{
   max-width:90rem;
   margin:auto;
   padding:3rem 4rem;
@@ -51,6 +73,14 @@ body{
   box-shadow:4px 4px 12px rgba(0,0,0,0.3);
 }
 
+.container-dark-bg{
+  background:linear-gradient(0deg, rgba(91, 49, 231, 0.155) 15%, rgba(0, 0, 0, 0.64) 30% 75%, rgba(255, 255, 255, 0.113) 85% );
+}
+
+.container-light-bg{
+  background:linear-gradient(0deg, rgba(2, 202, 247, 0.2) 20%, rgba(255, 255, 255, 0.513) 30% 75%, rgba(255, 145, 1, 0.213) 85% );
+}
+
 #timer-section{
   max-width:37rem;
 
@@ -64,6 +94,7 @@ body{
   font-size:clamp(11rem, 2rem + 28vw, 15rem);
   color:var(--font-color);
   text-shadow: 3px 3px 2px rgba(144, 144, 144, 0.776);
+  
 }
 
 button{
@@ -128,20 +159,15 @@ button{
   position:absolute;
   z-index:1;
 
-  width:6rem;
+  width:8rem;
   
   bottom:3rem;
-  left:4.0rem;
+  left:3.0rem;
 
   color:white;
 
   -webkit-appearance:none;
   border-radius:3px;
- 
-}
-
-.sound-btn:focus input{
-  opacity: 1;
 }
 
 .sound-btn input::-webkit-slider-runnable-track{
@@ -156,12 +182,12 @@ button{
 }
 
 .sound-btn input::-webkit-slider-thumb{
-  background: rgb(255, 179, 0);
+  background: #000000;
  
   width:1.1rem;
   height:1.1rem;
 
-  border: none;
+  border: 1px solid rgb(255, 255, 255);
   border-radius:1rem;
 
   -webkit-appearance: none;
@@ -189,7 +215,7 @@ footer{
   body{
     margin:0.2rem;
   }
-  #container{
+  .container{
     grid-template-columns:1fr;
     
     padding:0.5rem 0.2rem;

@@ -18,23 +18,28 @@ export default function Timer({
   let minute = Number(minutesDisplay.textContent);
   let timerTimeOut;
 
+  let bol = new Boolean(false);
+
   function countdown(){
     timerTimeOut = setTimeout(function(){
 
-      let minutes = Number(minutesDisplay.textContent);
-      let seconds = Number(secondsDisplay.textContent);
+    
+        let minutes = Number(minutesDisplay.textContent);
+        let seconds = Number(secondsDisplay.textContent);
+      
 
       if((minutes <= 0)&&(seconds <= 0)){
         TimerAlarm();
         resetTimer();
         controls.pauseHide();
+   
         return
       }
 
       if(minutes => 0){
        
         if((seconds == 0)&&(minutes > 0)){
-          seconds = 60;
+          seconds = 5;
           minutes = minutes - 1;
          
         }
@@ -47,6 +52,7 @@ export default function Timer({
     },1000)
 
   }
+
 
   function stopCountdown(){
     clearInterval(timerTimeOut);

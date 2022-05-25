@@ -24,6 +24,11 @@ const inputRain = document.querySelector('.inputRain');
 const inputCoffeeShop = document.querySelector('.inputCoffeeShop');
 const inputFirePlace = document.querySelector('.inputFirePlace');
 
+//Dark and Light Mode
+
+const lightMode = document.querySelector('.light');
+const darkMode = document.querySelector('.dark');
+
 export {
   minutesDisplay,
   secondsDisplay,
@@ -41,5 +46,7 @@ export {
   inputNature,
   inputRain,
   inputCoffeeShop,
-  inputFirePlace
+  inputFirePlace,
+  lightMode,
+  darkMode
 }
