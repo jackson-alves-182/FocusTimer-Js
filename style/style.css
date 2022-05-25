@@ -6,8 +6,8 @@
 :root{
   font-size:62.5%;
 
-  --btn-bg-color:#e2e1e6;
-  --btn-primary-color: #02799D;
+  --btn-bg-color:#e2e1e67e;
+  --btn-primary-color: #02799d89;
   --btn-secondary-color:#323238;
   --btn-text-color:#FFFFFF;
   --bg-color:#FFFFFF;
@@ -45,9 +45,11 @@ header{
   background-image:url("/assets/bg-img-light.jpg"); 
 }
 .dark-theme svg path:nth-child(1){
+  transition: fill 2s;
   fill:var(--btn-secondary-color);
 }
 .dark-theme svg path:nth-child(2){
+  transition: fill 2s;
   fill:var(--btn-text-color);
 }
 
@@ -199,9 +201,11 @@ button{
 }
 
 .color svg path:nth-child(1){
+  transition: fill 1s;
   fill:var(--btn-primary-color);
 }
 .color svg path:nth-child(2){
+  transition: fill 1s;
   fill:var(--btn-text-color);
 }
 
@@ -245,9 +249,5 @@ footer{
   .sound-btn input{
     bottom:4rem;
     left:3.2rem;
-  }
-  footer{
-    top:0;
-    right:0;
   }
 }

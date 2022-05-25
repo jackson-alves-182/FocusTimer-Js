@@ -39,7 +39,7 @@ export default function Timer({
       if(minutes => 0){
        
         if((seconds == 0)&&(minutes > 0)){
-          seconds = 5;
+          seconds = 60;
           minutes = minutes - 1;
          
         }

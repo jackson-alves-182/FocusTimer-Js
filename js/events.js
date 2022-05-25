@@ -29,18 +29,7 @@ export default function(sounds,timer,controls){
     darkMode.classList.add('hide');
 
     dark = true;
-    removeClassSoundBtn(dark);
-
-    document.querySelector('body').classList.remove('lightBG');
-    document.querySelector('body').classList.add('darkBG');
-    document.querySelector('.container').classList.remove('container-light-bg');
-    document.querySelector('.container').classList.add('container-dark-bg');
-
-    document.documentElement.style.setProperty('--btn-bg-color','#ffffff3f');
-    document.documentElement.style.setProperty('--font-color', '#ffffffa9');
-    document.documentElement.style.setProperty('--btn-secondary-color', '#ffffffa9');
-    document.documentElement.style.setProperty('--btn-text-color', '#000000');
-
+    darkModeClasses();
   })
 
   lightMode.addEventListener('click', function(){
@@ -48,12 +37,7 @@ export default function(sounds,timer,controls){
     lightMode.classList.add('hide');
 
     dark = false;
-    removeClassSoundBtn(dark);
-
-    document.querySelector('body').classList.remove('darkBG');
-    document.querySelector('body').classList.add('lightBG');
-    document.querySelector('.container').classList.remove('container-dark-bg');
-    document.querySelector('.container').classList.add('container-light-bg');
+    lightModeClasses();
   })
 
   buttonPlay.addEventListener('click', function(){
@@ -213,6 +197,38 @@ export default function(sounds,timer,controls){
         }
       }
     }
+  }
+
+  function darkModeClasses(){
+    removeClassSoundBtn(dark);
+
+    document.querySelector('body').classList.remove('lightBG');
+    document.querySelector('body').classList.add('darkBG');
+
+    document.querySelector('.container').classList.remove('container-light-bg');
+    document.querySelector('.container').classList.add('container-dark-bg');
+
+    document.documentElement.style.setProperty('--btn-bg-color','#ffffff3f');
+    document.documentElement.style.setProperty('--font-color', '#ffffffa9');
+
+    document.documentElement.style.setProperty('--btn-secondary-color', '#ffffffa9');
+    document.documentElement.style.setProperty('--btn-text-color', '#000000');
+  }
+
+  function lightModeClasses(){
+    removeClassSoundBtn(dark);
+
+    document.querySelector('body').classList.remove('darkBG');
+    document.querySelector('body').classList.add('lightBG');
+
+    document.querySelector('.container').classList.remove('container-dark-bg');
+    document.querySelector('.container').classList.add('container-light-bg');
+
+    document.documentElement.style.setProperty('--btn-bg-color','#e2e1e67e');
+    document.documentElement.style.setProperty('--font-color', '#000000');
+
+    document.documentElement.style.setProperty('--btn-secondary-color', '#323238');
+    document.documentElement.style.setProperty('--btn-text-color', '#FFFFFF');
   }
 
   inputNature.addEventListener('change', function(){
