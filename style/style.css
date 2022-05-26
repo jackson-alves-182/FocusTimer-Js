@@ -8,7 +8,7 @@
 
   --btn-bg-color:#e2e1e67e;
   --btn-primary-color: #02799d89;
-  --btn-secondary-color:#323238;
+  --btn-secondary-color:#0ab7ec;
   --btn-text-color:#FFFFFF;
   --bg-color:#FFFFFF;
   --font-color:#000000;
@@ -170,6 +170,9 @@ button{
 
   -webkit-appearance:none;
   border-radius:3px;
+
+  cursor:pointer;
+
 }
 
 .sound-btn input::-webkit-slider-runnable-track{
@@ -184,7 +187,7 @@ button{
 }
 
 .sound-btn input::-webkit-slider-thumb{
-  background: #000000;
+  background: #000000b9;
  
   width:1.1rem;
   height:1.1rem;
@@ -221,7 +224,6 @@ footer{
   }
   .container{
     grid-template-columns:1fr;
-    
     padding:0.5rem 0.2rem;
   }
   #timer-section{
@@ -248,6 +250,10 @@ footer{
   }
   .sound-btn input{
     bottom:4rem;
-    left:3.2rem;
+    left:2.3rem;
+  }
+  footer{
+    bottom:0.2rem;
+    left:2rem;
   }
 }
