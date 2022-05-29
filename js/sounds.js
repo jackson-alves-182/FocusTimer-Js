@@ -6,6 +6,11 @@ export default function(){
   const bgFirePlace = new Audio("./sounds/Lareira.wav");
   const click = new Audio("./sounds/Click.wav");
   const endTimerAlarm = new Audio("./sounds/End-alarm.wav");
+  const jailsonMendes = new Audio("./sounds/JailsonMendes.wav");
+
+  function jMendes(){
+    jailsonMendes.play();
+  }
 
   function clickSound(){
     click.volume = 0.2;
@@ -100,6 +105,7 @@ export default function(){
 
 
   return{
+    jMendes,
     clickSound,
     TimerAlarm,
     playNature,

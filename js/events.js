@@ -9,6 +9,7 @@ import{
   buttonRain,
   buttonCoffeeShop,
   buttonFireplace,
+  jailson,
   buttonSoundOn,
   buttonSoundOff,
   inputNature,
@@ -23,6 +24,11 @@ import{
 export default function(sounds,timer,controls){
   let sound;
   let dark = new Boolean(false);
+  let friend;
+
+  jailson.addEventListener('click', function(){
+    sounds.jMendes();
+  })
 
   darkMode.addEventListener('click', function(){
     lightMode.classList.remove('hide');
@@ -42,6 +48,14 @@ export default function(sounds,timer,controls){
 
   buttonPlay.addEventListener('click', function(){
     controls.play();
+
+    if(friend == "fri"){
+      friend += "e";
+    
+    }
+    if(friend == "friend"){
+     jailson.classList.remove('hide');
+    }
   })
 
   buttonPause.addEventListener('click', function(){
@@ -49,6 +63,7 @@ export default function(sounds,timer,controls){
   })
 
   buttonStop.addEventListener('click', function(){
+    friend += "d";
     controls.stop();
   })
 
@@ -61,6 +76,8 @@ export default function(sounds,timer,controls){
   });
 
   buttonNature.addEventListener('click', function(){
+    friend += "i";
+
     removeClassSoundBtn(dark);
     if(dark == false){
       buttonNature.classList.add('color');
@@ -84,6 +101,8 @@ export default function(sounds,timer,controls){
   });
 
   buttonRain.addEventListener('click', function(){
+    friend = "f";
+
     removeClassSoundBtn(dark);
     if(dark == false){
       buttonRain.classList.add('color');
@@ -108,6 +127,9 @@ export default function(sounds,timer,controls){
   });
 
   buttonCoffeeShop.addEventListener('click', function(){
+    friend += "n";
+  
+
     removeClassSoundBtn(dark);
     if(dark == false){
       buttonCoffeeShop.classList.add('color');
@@ -132,6 +154,7 @@ export default function(sounds,timer,controls){
   });
 
   buttonFireplace.addEventListener('click', function(){
+    friend += "r";
     removeClassSoundBtn(dark);
     if(dark == false){
       buttonFireplace.classList.add('color');
@@ -155,6 +178,10 @@ export default function(sounds,timer,controls){
     sounds.changeVolume(inputFirePlace.value, sound);
 
   });
+
+  jailson.addEventListener('click', function(){
+
+  })
 
   function stopSound(){
     buttonSoundOn.classList.add('hide');

@@ -24,6 +24,8 @@ const inputRain = document.querySelector('.inputRain');
 const inputCoffeeShop = document.querySelector('.inputCoffeeShop');
 const inputFirePlace = document.querySelector('.inputFirePlace');
 
+const jailson = document.querySelector('.jailson');
+
 //Dark and Light Mode
 
 const lightMode = document.querySelector('.light');
@@ -41,6 +43,7 @@ export {
   buttonRain,
   buttonCoffeeShop,
   buttonFireplace,
+  jailson,
   buttonSoundOn,
   buttonSoundOff,
   inputNature,
