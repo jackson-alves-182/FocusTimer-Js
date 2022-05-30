@@ -20,7 +20,7 @@ body{
   font-family:'Roboto', sans-serif;
   color:var(--font-color);
 
-  background-image:url("/assets/bg-img-light.jpg");
+  background-image:url("./assets/bg-img-light.jpg");
   background-position:bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -38,11 +38,11 @@ header{
 
 .darkBG{
   transition: background-image 1s;
-  background-image:url("/assets/bg-img.jpg");
+  background-image:url("./assets/bg-img.jpg");
 }
 .lightBG{
   transition: background-image 1s;
-  background-image:url("/assets/bg-img-light.jpg"); 
+  background-image:url("./assets/bg-img-light.jpg"); 
 }
 .dark-theme svg path:nth-child(1){
   transition: fill 2s;
