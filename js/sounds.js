@@ -11,6 +11,9 @@ export default function(){
   function jMendes(){
     jailsonMendes.play();
   }
+  function pauseJMendes(){
+    jailsonMendes.pause();
+  }
 
   function clickSound(){
     click.volume = 0.2;
@@ -106,6 +109,7 @@ export default function(){
 
   return{
     jMendes,
+    pauseJMendes,
     clickSound,
     TimerAlarm,
     playNature,

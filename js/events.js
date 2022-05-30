@@ -24,7 +24,9 @@ import{
 export default function(sounds,timer,controls){
   let sound;
   let dark = new Boolean(false);
+
   let friend;
+  let testFriend = new Boolean(false);
 
   jailson.addEventListener('click', function(){
     sounds.jMendes();
@@ -48,13 +50,13 @@ export default function(sounds,timer,controls){
 
   buttonPlay.addEventListener('click', function(){
     controls.play();
-
+  
     if(friend == "fri"){
       friend += "e";
-    
     }
     if(friend == "friend"){
      jailson.classList.remove('hide');
+     testFriend = true;
     }
   })
 
@@ -65,6 +67,12 @@ export default function(sounds,timer,controls){
   buttonStop.addEventListener('click', function(){
     friend += "d";
     controls.stop();
+
+    if(testFriend == true){
+      jailson.classList.add('hide');
+      sounds.pauseJMendes();
+      testFriend = false;
+    }
   })
 
   buttonAddTime.addEventListener('click', function(){
