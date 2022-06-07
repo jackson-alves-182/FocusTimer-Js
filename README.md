@@ -7,9 +7,9 @@
 <h3 align="center"> Light Mode / Dark Mode - Desktop</h3>
 
 <p align="center">
-<img src="https://github.com/jackson-alves-182/archives-Readme/blob/main/FocusTimer/Light-Mode_DESK.jpg" width="500px">
+<img src="https://github.com/jackson-alves-182/archives-Readme/blob/main/FocusTimer/Light-Mode_DESK.jpg" width="400px">
 
-<img src="https://github.com/jackson-alves-182/archives-Readme/blob/main/FocusTimer/Dark-Mode_DESK.jpg" width="500px">
+<img src="https://github.com/jackson-alves-182/archives-Readme/blob/main/FocusTimer/Dark-Mode_DESK.jpg" width="400px">
 </p>
 
 <h3 align="center"> Light Mode / Dark Mode - Mobile</h3>
