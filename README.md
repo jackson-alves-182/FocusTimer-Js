@@ -18,4 +18,8 @@
 <img src="https://github.com/jackson-alves-182/archives-Readme/blob/main/FocusTimer/Light-Mode-Mobile.jpg" height="400px">
 
 <img src="https://github.com/jackson-alves-182/archives-Readme/blob/main/FocusTimer/Dark-Mode-Mobile.jpg" height="400px">
+<<<<<<< HEAD
 </p>
+=======
+</p>
+>>>>>>> 742a76e2cb2277832ab36cfc494485db33881540
