@@ -234,6 +234,7 @@ export default function(sounds,timer,controls){
     }
   }
 
+
   function darkModeClasses(){
     removeClassSoundBtn(dark);
 
@@ -243,10 +244,10 @@ export default function(sounds,timer,controls){
     document.querySelector('.container').classList.remove('container-light-bg');
     document.querySelector('.container').classList.add('container-dark-bg');
 
-    document.documentElement.style.setProperty('--btn-bg-color','#ffffff3f');
+    document.documentElement.style.setProperty('--btn-bg-color','#ffffff6f');
     document.documentElement.style.setProperty('--font-color', '#ffffffa9');
 
-    document.documentElement.style.setProperty('--btn-secondary-color', '#ffffffa9');
+    document.documentElement.style.setProperty('--btn-secondary-color', '#ffffffde');
     document.documentElement.style.setProperty('--btn-text-color', '#000000');
   }
 
@@ -260,9 +261,9 @@ export default function(sounds,timer,controls){
     document.querySelector('.container').classList.add('container-light-bg');
 
     document.documentElement.style.setProperty('--btn-bg-color','#e2e1e67e');
-    document.documentElement.style.setProperty('--font-color', '#000000');
+    document.documentElement.style.setProperty('--font-color', '#1c2022');
 
-    document.documentElement.style.setProperty('--btn-secondary-color', '#323238');
+    document.documentElement.style.setProperty('--btn-secondary-color', '#1c2022');
     document.documentElement.style.setProperty('--btn-text-color', '#FFFFFF');
   }
 
