@@ -76,14 +76,17 @@ export default function(sounds,timer,controls){
   })
 
   buttonAddTime.addEventListener('click', function(){
+    sounds.clickSound();
     timer.addTime();
   });
 
   buttonRemoveTime.addEventListener('click', function(){
+    sounds.clickSound();
     timer.removeTime();
   });
 
   buttonNature.addEventListener('click', function(){
+    sounds.clickCards();
     friend += "i";
 
     removeClassSoundBtn(dark);
@@ -109,6 +112,7 @@ export default function(sounds,timer,controls){
   });
 
   buttonRain.addEventListener('click', function(){
+    sounds.clickCards();
     friend = "f";
 
     removeClassSoundBtn(dark);
@@ -135,8 +139,8 @@ export default function(sounds,timer,controls){
   });
 
   buttonCoffeeShop.addEventListener('click', function(){
+    sounds.clickCards();
     friend += "n";
-  
 
     removeClassSoundBtn(dark);
     if(dark == false){
@@ -162,7 +166,9 @@ export default function(sounds,timer,controls){
   });
 
   buttonFireplace.addEventListener('click', function(){
+    sounds.clickCards();
     friend += "r";
+    
     removeClassSoundBtn(dark);
     if(dark == false){
       buttonFireplace.classList.add('color');

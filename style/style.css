@@ -185,7 +185,8 @@ button{
   border-radius:3px;
 
   cursor:pointer;
-  transition: display 2s;
+  
+  animation: fade-in 500ms forwards;
 
 }
 
@@ -269,5 +270,15 @@ button{
   .toggle-sound{
     bottom:1.5rem;
     right:0.5rem;
+  }
+}
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
   }
 }

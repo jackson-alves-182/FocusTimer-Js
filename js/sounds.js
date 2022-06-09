@@ -7,6 +7,7 @@ export default function(){
   const click = new Audio("./sounds/Click.wav");
   const endTimerAlarm = new Audio("./sounds/End-alarm.wav");
   const jailsonMendes = new Audio("./sounds/JailsonMendes.wav");
+  const clickCard = new Audio ("./sounds/ClickSoundCards.wav");
 
   function jMendes(){
     jailsonMendes.play();
@@ -16,8 +17,13 @@ export default function(){
   }
 
   function clickSound(){
-    click.volume = 0.2;
+    click.volume = 0.4;
     click.play();
+  }
+  
+  function clickCards(){
+    clickCard.volume = 0.4;
+    clickCard.play();
   }
 
   function TimerAlarm(){
@@ -111,6 +117,7 @@ export default function(){
     jMendes,
     pauseJMendes,
     clickSound,
+    clickCards,
     TimerAlarm,
     playNature,
     pauseNature,
