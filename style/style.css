@@ -124,9 +124,6 @@ button{
 }
 
 #timer-buttons > button{
-  width:62px;
-  height:62px;
-
   position:relative;
 }
 
@@ -185,7 +182,7 @@ button{
   border-radius:3px;
 
   cursor:pointer;
-  
+
   animation: fade-in 500ms forwards;
 
 }
@@ -253,6 +250,10 @@ button{
     width:85%;
     justify-content:space-around;
     gap:1rem;
+  }
+  .pause{
+    width:48.5px;
+    height:60x;
   }
   #sounds-buttons{
     width:90%;
