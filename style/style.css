@@ -127,6 +127,11 @@ button{
   position:relative;
 }
 
+.pause{
+  width:48.5px;
+  height:60x;
+}
+
 #timer-buttons button:nth-child(4)::before,
 #timer-buttons button:nth-child(5)::before{
   content:'';
@@ -251,10 +256,7 @@ button{
     justify-content:space-around;
     gap:1rem;
   }
-  .pause{
-    width:48.5px;
-    height:60x;
-  }
+  
   #sounds-buttons{
     width:90%;
     margin:auto;
