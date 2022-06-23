@@ -11,16 +11,14 @@
   --btn-secondary-color:rgb(28, 32, 34);
   --btn-text-color:#FFFFFF;
   --bg-color:#FFFFFF;
-  --font-color::#1c2022;
-
-  --btn-timer-color:#1c2022;
+  --font-color:#1c2022;
 
   --btn-tooltip-color:#dbdbdb6b;
 }
 
 body{
   font-family:'Roboto', sans-serif;
-
+  color:var(--font-color);
 
   background-image:url("/assets/bg-img-light.jpg");
   background-position:bottom;
@@ -109,6 +107,7 @@ header{
   font-size:clamp(11rem, 2rem + 28vw, 15rem);
   color:var(--font-color);
   text-shadow: 3px 3px 2px rgba(144, 144, 144, 0.776);
+  
 }
 
 button{
@@ -127,8 +126,8 @@ button{
 }
 
 .timer-btn svg:hover path{
-  transition: fill 0.35s;
-  fill:rgb(0, 132, 255);
+  transition: fill 0.5s;
+  fill:#0288f5;
 }
 
 .pause{
